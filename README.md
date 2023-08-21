@@ -19,5 +19,6 @@ const hashedWord = bcrypt.hashSync(word, saltRounds);
 console.log('Hashed word:', hashedWord);
 ```
 
+Additionally, I added a `database structure` folder consisting of JSON files from MongoDB.
 
 <sub>MADE WITH HEARTH 🖤</sub>
