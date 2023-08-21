@@ -4,18 +4,17 @@ import ContentModify from './components/ContentModify';
 import MainPage from './components/MainPage';
 import LoginPage from './components/LoginPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import bcrypt from 'bcryptjs'; // Importuj bibliotekę do hashowania
+import bcrypt from 'bcryptjs';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
-  const hashedAdminPassword = '$2a$10$zRijfB6I0YyDQCK2V0biZ.Txriu7lV9tLmevU9paZRiU7.hDY0YhC'; // Hasz hasła 'admin'
+  const hashedAdminPassword = '$2a$10$zRijfB6I0YyDQCK2V0biZ.Txriu7lV9tLmevU9paZRiU7.hDY0YhC';
   const hashedLogin = '$2a$10$FMU2D6hdSgLflR7987wURentzyZiZpLNyJcjlcwj53AH5D6G9kaBq'
 
   const handleLogin = () => {
-    // Porównaj hasło z haszem
     const isPasswordCorrect = bcrypt.compareSync(password, hashedAdminPassword);
     const isLoginCorrect = bcrypt.compareSync(login, hashedLogin);
 
