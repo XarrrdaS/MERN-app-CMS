@@ -18,7 +18,7 @@ const ContentModify = ({ isLoggedIn }) => {
         setContentData(data);
         setTextareaHeight();
       })
-      .catch((error) => console.error('Błąd podczas pobierania danych:', error));
+      .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
   const setTextareaHeight = () => {
@@ -56,9 +56,9 @@ const ContentModify = ({ isLoggedIn }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Dane zaktualizowane pomyślnie:', data);
+        console.log('Data updated successfully:', data);
       })
-      .catch((error) => console.error('Błąd podczas aktualizacji danych:', error));
+      .catch((error) => console.error('Error updating data:', error));
   };
 
   const handleLogoutClick = () => {
